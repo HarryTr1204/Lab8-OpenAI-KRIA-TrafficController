@@ -1,0 +1,57 @@
+#Perform the instructions from this website as a prerequisite:
+https://platform.openai.com/docs/quickstart 
+
+#If you don’t have Python installed, install it from here. 
+#Note, this is different from Anaconda Python.
+# You will use this from the Powershell command line
+https://www.python.org/downloads/ 
+
+#Always open the Powershell as Administrator
+
+#Download the zip file from here
+# https://github.com/openai/openai-quickstart-python/archive/refs/heads/master.zip
+# and unload it to C:\openai-quickstart-python-master>
+
+#Obtain your OPENAI_API_KEY from here: 
+# https://platform.openai.com/docs/quickstart/build-your-application
+# Under the "Add your API key" section, there is a button for you to generate the key.
+
+#Create your .env file
+cd openai-quickstart-python
+cp .env.example .env
+
+#Edit the newly created .env file and add this line:
+OPENAI_API_KEY = "sk-cKGw4MBXE3EnYOUR_OWN_KEY_HERE"
+
+#Create the virtual environment
+python -m venv venv
+
+#Activate the path to the virtual environment
+#Instead of running the following lines:
+# . venv/bin/activate
+#Run this line for Windows: 
+.\venv\Scripts\activate.bat
+
+#Install all packages needed for the requirements:
+pip install -r requirements.txt
+  # Note: you may have to upgrade your numpy using this command:
+  #   pip3 install numpy --upgrade
+
+#Now run the webserver:
+flask run
+
+#Open http://localhost:5000 in your browser and you should see the pet name generator!
+http://localhost:5000 
+
+# Run the baseline as is first, then make the following changes:
+
+# 1. Change the picture of the website from a dog to something else.
+#   Hint: Check out C:\openai-quickstart-python-master\static 
+
+# 2. Change the title from “Name my pet” to something else more generic applicable to things and humans as well. (3 points)
+#   Hint: Check out C:\openai-quickstart-python-master\templates
+
+# 3. Change the code to generate 4 names instead of 3 names. (5 points)
+#   Hint: Edit the app.py file from C:\openai-quickstart-python-master
+#   Check out function def generate_prompt(animal)
+
